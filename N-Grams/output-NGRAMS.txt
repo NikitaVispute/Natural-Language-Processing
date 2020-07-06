@@ -1,0 +1,191 @@
+HW1 Q2 N-Grams
+
+
+Sentence 1 : Sales of the company to return to normalcy
+
+Sentence 2 : The new products and services contributed to increase revenue
+---------------------------------------------------------------------------
+
+1. Compute the bigrams for S1, S2
+
+
+ All the Bigrams for Sentence 1
+['sales,normalcy', 'sales,to', 'sales,company', 'sales,of', 'sales,the', 'sales,return', 'normalcy,normalcy', 'normalcy,to', 'normalcy,company', 'normalcy,of', 'normalcy,the', 'normalcy,return', 'to,normalcy', 'to,to', 'to,company', 'to,of', 'to,the', 'to,return', 'company,normalcy', 'company,to', 'company,company', 'company,of', 'company,the', 'company,return', 'of,normalcy', 'of,to', 'of,company', 'of,of', 'of,the', 'of,return', 'the,normalcy', 'the,to', 'the,company', 'the,of', 'the,the', 'the,return', 'return,normalcy', 'return,to', 'return,company', 'return,of', 'return,the', 'return,return']
+
+ All the Bigrams for Sentence 2
+['new,and', 'new,contributed', 'new,to', 'new,products', 'new,revenue', 'new,increase', 'new,services', 'new,the', 'and,and', 'and,contributed', 'and,to', 'and,products', 'and,revenue', 'and,increase', 'and,services', 'and,the', 'contributed,and', 'contributed,contributed', 'contributed,to', 'contributed,products', 'contributed,revenue', 'contributed,increase', 'contributed,services', 'contributed,the', 'to,and', 'to,contributed', 'to,to', 'to,products', 'to,revenue', 'to,increase', 'to,services', 'to,the', 'products,and', 'products,contributed', 'products,to', 'products,products', 'products,revenue', 'products,increase', 'products,services', 'products,the', 'revenue,and', 'revenue,contributed', 'revenue,to', 'revenue,products', 'revenue,revenue', 'revenue,increase', 'revenue,services', 'revenue,the', 'increase,and', 'increase,contributed', 'increase,to', 'increase,products', 'increase,revenue', 'increase,increase', 'increase,services', 'increase,the', 'services,and', 'services,contributed', 'services,to', 'services,products', 'services,revenue', 'services,increase', 'services,services', 'services,the', 'the,and', 'the,contributed', 'the,to', 'the,products', 'the,revenue', 'the,increase', 'the,services', 'the,the']
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2.(a) Construct automatically the bigram counts table for S1, S2
+
+
+
+Bigram counts table for Sentence 1 Without Smoothing
+
+                  sales       normalcy             to        company             of            the         return
+sales           0               0               0               0               1               0               0
+normalcy        0               0               0               0               0               0               0
+to              0               1               0               0               0               86              2
+company         0               0               3               0               0               6               0
+of              0               0               0               1               0               267             0
+the             0               0               0               52              0               0               0
+return          0               0               4               0               0               0               0
+
+
+
+Bigram counts table for Sentence 2 Without Smoothing
+
+                    new            and    contributed             to       products        revenue       increase       services            the
+new             0               0               0               0               1               0               0               0               0
+and             1               0               0               4               0               0               0               2               40
+contributed     0               0               0               2               0               0               0               0               0
+to              0               0               0               0               0               0               2               0               86
+products        0               3               0               0               0               0               0               0               1
+revenue         0               0               0               0               0               0               0               0               0
+increase        0               0               0               0               0               1               0               0               0
+services        0               0               1               0               0               0               0               0               1
+the             36              0               0               0               0               0               0               0               0
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+2.(b) Construct automatically the bigram probabilities table for language model without smoothing for S1, S2
+
+
+Bigram Probability Table for SENTENCE 1 Without Smoothing
+
+                  sales       normalcy             to        company             of            the         return
+sales           0.0             0.0             0.0             0.0             0.0625          0.0             0.0
+normalcy        0.0             0.0             0.0             0.0             0.0             0.0             0.0
+to              0.0             0.0015          0.0             0.0             0.0             0.1317          0.0031
+company         0.0             0.0             0.0286          0.0             0.0             0.0571          0.0
+of              0.0             0.0             0.0             0.0011          0.0             0.2837          0.0
+the             0.0             0.0             0.0             0.0329          0.0             0.0             0.0
+return          0.0             0.0             0.3636          0.0             0.0             0.0             0.0
+
+Bigram Probability Table for SENTENCE 2 Without Smoothing
+
+                  new            and         contributed         to           products        revenue       increase       services            the
+new             0.0             0.0             0.0             0.0             0.0101          0.0             0.0             0.0             0.0
+and             0.0015          0.0             0.0             0.0058          0.0             0.0             0.0             0.0029          0.0584
+contributed     0.0             0.0             0.0             0.6667          0.0             0.0             0.0             0.0             0.0
+to              0.0             0.0             0.0             0.0             0.0             0.0             0.0031          0.0             0.1317
+products        0.0             0.2308          0.0             0.0             0.0             0.0             0.0             0.0             0.0769
+revenue         0.0             0.0             0.0             0.0             0.0             0.0             0.0             0.0             0.0
+increase        0.0             0.0             0.0             0.0             0.0             0.1429          0.0             0.0             0.0
+services        0.0             0.0             0.0556          0.0             0.0             0.0             0.0             0.0             0.0556
+the             0.0228          0.0             0.0             0.0             0.0             0.0             0.0             0.0             0.0
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3.(i) Construct automatically the Laplaced-smoothed counts tables for S1, S2
+
+
+Laplaced-smoothed counts table for Sentence 1
+
+                sales       normalcy           to          company             of            the            return
+sales           1               1               1               1               2               1               1
+normalcy        1               1               1               1               1               1               1
+to              1               2               1               1               1               87              3
+company         1               1               4               1               1               7               1
+of              1               1               1               2               1               268             1
+the             1               1               1               53              1               1               1
+return          1               1               5               1               1               1               1
+
+Laplaced-smoothed counts table for Sentence 2
+
+                new            and       contributed           to         products         revenue        increase        services            the
+new             1               1               1               1               2               1               1               1               1
+and             2               1               1               5               1               1               1               3               41
+contributed     1               1               1               3               1               1               1               1               1
+to              1               1               1               1               1               1               3               1               87
+products        1               4               1               1               1               1               1               1               2
+revenue         1               1               1               1               1               1               1               1               1
+increase        1               1               1               1               1               2               1               1               1
+services        1               1               2               1               1               1               1               1               2
+the             37              1               1               1               1               1               1               1               1
+
+---------------------------------------------------------------------------------------
+
+3.(ii) Construct automatically the Laplaced-smoothed probability tables for S1, S2
+
+
+Laplaced-smoothed probability table for Sentence 1
+
+                  sales       normalcy             to        company             of            the             return
+sales           0.0002          0.0002          0.0002          0.0002          0.0004          0.0002          0.0002
+normalcy        0.0002          0.0002          0.0002          0.0002          0.0002          0.0002          0.0002
+to              0.0002          0.0003          0.0002          0.0002          0.0002          0.0144          0.0005
+company         0.0002          0.0002          0.0007          0.0002          0.0002          0.0013          0.0002
+of              0.0002          0.0002          0.0002          0.0003          0.0002          0.0423          0.0002
+the             0.0001          0.0001          0.0001          0.0076          0.0001          0.0001          0.0001
+return          0.0002          0.0002          0.0009          0.0002          0.0002          0.0002          0.0002
+
+
+Laplaced-smoothed probability table for Sentence 2
+
+                   new            and       contributed             to        products         revenue       increase         services             the
+new             0.0002          0.0002          0.0002          0.0002          0.0004          0.0002          0.0002          0.0002          0.0002
+and             0.0003          0.0002          0.0002          0.0008          0.0002          0.0002          0.0002          0.0005          0.0067
+contributed     0.0002          0.0002          0.0002          0.0006          0.0002          0.0002          0.0002          0.0002          0.0002
+to              0.0002          0.0002          0.0002          0.0002          0.0002          0.0002          0.0005          0.0002          0.0144
+products        0.0002          0.0007          0.0002          0.0002          0.0002          0.0002          0.0002          0.0002          0.0004
+revenue         0.0002          0.0002          0.0002          0.0002          0.0002          0.0002          0.0002          0.0002          0.0002
+increase        0.0002          0.0002          0.0002          0.0002          0.0002          0.0004          0.0002          0.0002          0.0002
+services        0.0002          0.0002          0.0004          0.0002          0.0002          0.0002          0.0002          0.0002          0.0004
+the             0.0053          0.0001          0.0001          0.0001          0.0001          0.0001          0.0001          0.0001          0.0001
+
+------------------------------------------------------------------------------------------------
+
+3.(iii) Construct automatically the corresponding re-constituted counts tables for S1, S2
+
+
+Corresponding re-constituted counts table for Sentence 1
+
+                  sales       normalcy             to        company             of            the             return
+sales           0.003           0.003           0.003           0.003           0.0059          0.003           0.003
+normalcy        0.0002          0.0002          0.0002          0.0002          0.0002          0.0002          0.0002
+to              0.1078          0.2157          0.1078          0.1078          0.1078          9.3825          0.3235
+company         0.0191          0.0191          0.0763          0.0191          0.0191          0.1335          0.0191
+of              0.1484          0.1484          0.1484          0.2967          0.1484          39.7585         0.1484
+the             0.2265          0.2265          0.2265          12.0054         0.2265          0.2265          0.2265
+return          0.002           0.002           0.0102          0.002           0.002           0.002           0.002
+
+
+Corresponding re-constituted counts table for Sentence 2
+
+                  new            and        contributed          to            products        revenue        increase        services            the
+new             0.018           0.018           0.018           0.018           0.036           0.018           0.018           0.018           0.018
+and             0.2251          0.1125          0.1125          0.5627          0.1125          0.1125          0.1125          0.3376          4.6139
+contributed     0.0006          0.0006          0.0006          0.0017          0.0006          0.0006          0.0006          0.0006          0.0006
+to              0.1078          0.1078          0.1078          0.1078          0.1078          0.1078          0.3235          0.1078          9.3825
+products        0.0024          0.0096          0.0024          0.0024          0.0024          0.0024          0.0024          0.0024          0.0048
+revenue         0.0013          0.0013          0.0013          0.0013          0.0013          0.0013          0.0013          0.0013          0.0013
+increase        0.0013          0.0013          0.0013          0.0013          0.0013          0.0026          0.0013          0.0013          0.0013
+services        0.0033          0.0033          0.0066          0.0033          0.0033          0.0033          0.0033          0.0033          0.0066
+the             8.3812          0.2265          0.2265          0.2265          0.2265          0.2265          0.2265          0.2265          0.2265
+
+------------------------------------------------------------------------------------------------------------
+
+4.(a) Compute the total probabilities for each sentence S1 and S2 using the bigram model without smoothing
+
+Total probability for Sentence 1 using the bigram model without smoothing
+Sentence 1 probability without smoothing = 2.8405433054215833e-11
+Sentence 1 logarithmic probability without smoothing = 0.0022055211635133745
+
+Total probability for Sentence 2 using the bigram model without smoothing
+Sentence 2 probability without smoothing = 2.509765608337218e-12
+Sentence 2 logarithmic probability without smoothing = 0.14374531669733176
+
+Sentence 1 is better than Sentence 2 ie:Sales of the company to return to normalcy
+------------------------------------------------------------------------------------------------------------
+
+4.(b) Compute the total probabilities for each sentence S1 and S2 using the bigram model Laplace-smoothed
+
+Total probability for Sentence 1 using the bigram model Laplace-smoothed
+Sentence 1 probability Laplace-smoothed = 1.2995786381836214e-20
+Sentence 1 logarithmic probability Laplace-smoothed = 0.000330610928974661
+
+Total probability for Sentence 2 using the bigram model Laplace-smoothed
+Sentence 2 probability Laplace-smoothed = 2.63112641349879e-26
+Sentence 2 logarithmic probability Laplace-smoothed = 0.0003699374584481377
+
+Sentence 1 is better than Sentence 2 ie:Sales of the company to return to normalcy
