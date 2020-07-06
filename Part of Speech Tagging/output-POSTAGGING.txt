@@ -1,0 +1,131 @@
+HW1 Q4 POS Tagging
+
+<s> Start Probabilities (pi)
+
+        DT      NN      VB      VBZ     VBN     JJ      RB      IN
+        0.38    0.32    0.05    0.0     0.0     0.11    0.1     0.23
+
+Matrix A: Transition Probabilities
+
+        DT      NN      VB      VBZ     VBN     JJ      RB      IN
+DT      0.0     0.58    0.0     0.0     0.0     0.42    0.0     0.0
+NN      0.0     0.12    0.0     0.05    0.32    0.0     0.0     0.25
+VB      0.01    0.05    0.0     0.0     0.0     0.0     0.2     0.61
+VBZ     0.2     0.3     0.0     0.0     0.0     0.25    0.15    0.1
+VBN     0.18    0.22    0.0     0.0     0.2     0.07    0.16    0.11
+JJ      0.0     0.85    0.0     0.0     0.0     0.12    0.0     0.0
+RB      0.0     0.0     0.0     0.22    0.28    0.39    0.1     0.0
+IN      0.57    0.28    0.0     0.0     0.0     0.15    0.0     0.0
+
+Matrix B: Observation Likelihood: Emission Probabilities
+
+        a       the     chair  chairman board   road    is      was     found   middle  bold  completely in      of
+DT      1.0     1.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0
+NN      0.0     0.0     0.69    1.0     0.88    1.0     0.0     0.0     0.01    0.66    0.38    0.0     0.0     0.0
+VB      0.0     0.0     0.31    0.0     0.12    0.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0
+VBZ     0.0     0.0     0.0     0.0     0.0     0.0     1.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0
+VBN     0.0     0.0     0.0     0.0     0.0     0.0     0.0     1.0     0.99    0.0     0.0     0.0     0.0     0.0
+JJ      0.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0     0.34    0.62    0.0     0.0     0.0
+RB      0.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0     1.0     0.0     0.0
+IN      0.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0     0.0     1.0     1.0
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+ Sentence 1:
+
+['the', 'chairman', 'of', 'the', 'board', 'is', 'completely', 'bold']
+
+Sentence 1 according to observation element ID
+[1, 3, 13, 1, 4, 6, 11, 10]
+
+Sentence 1 according to observation element ID after 3 time steps
+['the', 'chairman', 'of']
+[1, 3, 13]
+
+Transition matrix for Sentence 1 in 3 time-steps:
+DT    NN    VB    VBZ   VBN   JJ    RB    IN
+[[0.38  0.    0.    0.    0.    0.    0.    0.   ]
+ [0.    0.22  0.    0.    0.    0.    0.    0.   ]
+ [0.    0.    0.    0.    0.    0.    0.    0.055]]
+
+Observation matrix for Sentence 1 in 3 time-steps:
+DT NN VB VBZ VBN JJ RB IN
+[[1. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 1. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 1.]]
+----------------------------------------------------------------------------------
+
+ Sentence 2:
+
+['a', 'chair', 'was', 'found', 'in', 'the', 'middle', 'of', 'the', 'road']
+
+Sentence 2 according to observation element ID
+[0, 2, 7, 8, 12, 1, 9, 13, 1, 5]
+
+Sentence 2 according to obserbvation element ID after 3 time steps
+['a', 'chair', 'was']
+[0, 2, 7]
+
+Transition matrix for Sentence 2 in 3 time-steps:
+  DT    NN    VB    VBZ   VBN   JJ    RB    IN
+[[0.38  0.    0.    0.    0.    0.    0.    0.   ]
+ [0.    0.152 0.    0.    0.    0.    0.    0.   ]
+ [0.    0.    0.    0.    0.049 0.    0.    0.   ]]
+
+Observation matrix for Sentence 2 in 3 time-steps:
+  DT   NN   VB   VBZ  VBN  JJ   RB   IN
+[[1.   0.   0.   0.   0.   0.   0.   0.  ]
+ [0.   0.69 0.31 0.   0.   0.   0.   0.  ]
+ [0.   0.   0.   0.   1.   0.   0.   0.  ]]
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ SENTENCE 1
+
+['the', 'chairman', 'of', 'the', 'board', 'is', 'completely', 'bold']
+
+Part-of-Speech Tagging for the sentence:
+['DT', 'NN', 'IN', 'DT', 'NN', 'VBZ', 'RB', 'JJ']
+
+Probability of assigning tag: 2.9070645832799994e-05
+
+Viterbi Matrix for Sentence 1
+
+                the        chairman              of             the           board              is        completely          bold
+DT              0.38            0               0               0.03141         0               0               0               0
+NN              0.0             0.2204          0               0               0.01603         0               0               0
+VB              0.0             0               0               0               0               0               0               0
+VBZ             0.0             0               0               0               0               0.0008          0               0
+VBN             0.0             0               0               0               0               0               0               0
+JJ              0.0             0               0               0               0               0               0               3e-05
+RB              0.0             0               0               0               0               0               0.00012         0
+IN              0.0             0               0.0551          0               0               0               0               0
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ SENTENCE 2
+
+['a', 'chair', 'was', 'found', 'in', 'the', 'middle', 'of', 'the', 'road']
+
+Part-of-Speech Tagging for the sentence:
+['DT', 'NN', 'VBN', 'VBN', 'IN', 'DT', 'NN', 'IN', 'DT', 'NN']
+
+Probability of assigning tag: 1.9114290288212102e-05
+
+Viterbi Matrix for Sentence 2
+
+                a           chair             was           found              in             the          middle              of             the            road
+DT              0.38            0               0               0               0               0.0006          0               0               3e-05           0
+NN              0.0             0.15208         0               0.00011         0               0               0.00023         0               0               2e-05
+VB              0.0             0               0               0               0               0               0               0               0               0
+VBZ             0.0             0               0               0               0               0               0               0               0               0
+VBN             0.0             0               0.04866         0.00964         0               0               0               0               0               0
+JJ              0.0             0               0               0               0               0               9e-05           0               0               0
+RB              0.0             0               0               0               0               0               0               0               0               0
+IN              0.0             0               0               0               0.00106         0               0               6e-05           0               0
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Sentence 1: The chairman of the board is completely bold
+Using Stanford POS Tagging, Sentence 1 is tagged as:
+[('The', 'DT'), ('chairman', 'NN'), ('of', 'IN'), ('the', 'DT'), ('board', 'NN'), ('is', 'VBZ'), ('completely', 'RB'), ('bold', 'JJ')]
+
+Sentence 2: A chair was found in the middle of the road
+Using Stanford POS Tagging, Sentence 2 is tagged as:
+[('A', 'DT'), ('chair', 'NN'), ('was', 'VBD'), ('found', 'VBN'), ('in', 'IN'), ('the', 'DT'), ('middle', 'NN'), ('of', 'IN'), ('the', 'DT'), ('road', 'NN')]
