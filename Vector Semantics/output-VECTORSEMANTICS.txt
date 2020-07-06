@@ -1,0 +1,56 @@
+HW1 Q3 Vector Semantics
+
+For words  ['chairman', 'company'] in context of  ['said', 'of', 'board'] with no smoothing
+
+Count Matrix without smoothing:
+[[125.   0.  16.]
+ [ 24.   0.  29.]]
+PPMI of  chairman  in context of  said :  0.207
+PPMI of  chairman  in context of  of :  0.0
+PPMI of  chairman  in context of  board :  0.0
+PPMI of  company  in context of  said :  0.0
+PPMI of  company  in context of  of :  0.0
+PPMI of  company  in context of  board :  1.238
+
+PPMI Matrix for word, contextword
+[[0.207 0.    0.   ]
+ [0.    0.    1.238]]
+------------------------------------------------------------------------------------------------------
+
+For words  ['chairman', 'company'] in context of  ['said', 'of', 'board'] with add-2 smoothing
+
+Count Matrix with add-2 smoothing:
+[[127.   2.  18.]
+ [ 26.   2.  31.]]
+PPMI of  chairman  in context of  said :  0.218
+PPMI of  chairman  in context of  of :  0.0
+PPMI of  chairman  in context of  board :  0.0
+PPMI of  company  in context of  said :  0.0
+PPMI of  company  in context of  of :  0.804
+PPMI of  company  in context of  board :  1.143
+
+PPMI Matrix for word, contextword
+[[0.218 0.    0.   ]
+ [0.    0.804 1.143]]
+------------------------------------------------------------------------------------------------------------
+
+For words  ['chairman', 'company', 'sales', 'economy'] in context of  ['said', 'of', 'board'] without smoothing for given Corpus
+
+Count Matrix without smoothing:
+[[125.   0.  16.]
+ [ 24.   0.  29.]
+ [  3.   0.   0.]
+ [  2.   0.   0.]]
+
+chairman company  similarity :  0.730220524050694
+chairman sales  similarity :  0.9919073083234753
+chairman economy  similarity :  0.9919073083234754
+company sales  similarity :  0.637567714034226
+company economy  similarity :  0.637567714034226
+sales economy  similarity :  1.0
+--------------------------------------------------------------------------------------------------------------------
+
+Using Glove Wikipedia pre-trained vectors
+Similarity between 'chairman' and 'company' using Glove: 0.57379776
+Similarity between 'company' and 'sales' using Glove: 0.7634718
+Similarity between 'sales' and 'economy' using Glove: 0.6253733
