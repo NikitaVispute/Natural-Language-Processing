@@ -1,0 +1,53 @@
+	 CNF Grammar for the sentence
+
+NP -> NN NN
+NP -> NNP CD
+NP -> NP PP
+NP -> X1 NN
+NP -> X10 NNP
+NP -> X3 NN
+PP -> IN NP
+Root -> NP VP
+S -> NP VP
+VP -> VB NP
+VP -> X4 VP
+VP -> X6 VP
+VP -> X8 PP
+X1 -> JJ JJ
+X10 -> X9 NNP
+X2 -> DT CD
+X3 -> DT JJ
+X4 -> VP CC
+X5 -> VBZ NP
+X6 -> MD ADVP
+X7 -> X2 NNP
+X8 -> X5 PP
+X9 -> X7 NNP
+ADVP -> 'only'
+CC -> 'but'
+CD -> '2019'
+CD -> '3'
+DT -> 'a'
+DT -> 'the'
+IN -> 'at'
+IN -> 'in'
+IN -> 'on'
+JJ -> 'historic'
+JJ -> 'international'
+JJ -> 'quadruple'
+JJ -> 'senior'
+JJ -> 'silver'
+MD -> 'could'
+NN -> 'competition'
+NN -> 'figure'
+NN -> 'jump'
+NN -> 'medal'
+NN -> 'skater'
+NNP -> 'Championships'
+NNP -> 'Day'
+NNP -> 'Figure'
+NNP -> 'Skating'
+NNP -> 'World'
+RB -> 'only'
+VB -> 'clinch'
+VBZ -> 'lands'

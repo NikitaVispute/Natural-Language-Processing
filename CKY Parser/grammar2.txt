@@ -1,0 +1,20 @@
+	 CNF Grammar for the sentence
+
+NP -> X1 NNS
+NP -> X2 NNS
+Root -> NP VP
+S -> NP VP
+VP -> TO VP
+VP -> VB NN
+VP -> VBD VP
+X1 -> NP CC
+X2 -> DT JJ
+CC -> 'and'
+DT -> 'The'
+JJ -> 'new'
+NN -> 'revenue'
+NNS -> 'products'
+NNS -> 'services'
+TO -> 'to'
+VB -> 'increase'
+VBD -> 'contributed'

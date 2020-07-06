@@ -1,0 +1,31 @@
+	 CNF Grammar for the sentence
+
+NP -> DT NN
+NP -> JJ NNS
+NP -> NN NN
+PP -> IN NP
+Root -> NP VP
+S -> NP VP
+SB -> IN S
+SB -> X1 S
+VP -> VBD ADJP
+VP -> VBP PP
+VP -> VBZ SB
+X1 -> SB CC
+ADJP -> 'economical'
+ADJP -> 'red'
+CC -> 'and'
+DT -> 'the'
+IN -> 'as'
+IN -> 'through'
+JJ -> 'economical'
+JJ -> 'red'
+NN -> 'indicator'
+NN -> 'month'
+NN -> 'recession'
+NNP -> 'Dow'
+NNS -> 'worries'
+NP -> 'Dow'
+VBD -> 'flashed'
+VBP -> 'continue'
+VBZ -> 'falls'

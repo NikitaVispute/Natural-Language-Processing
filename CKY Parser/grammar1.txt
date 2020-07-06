@@ -1,0 +1,19 @@
+	 CNF Grammar for the sentence
+
+INFVP -> TO VP
+NP -> X1 INFVP
+NP1 -> NNS PP
+PP -> IN NP
+PP -> TO NN
+Root -> NP1 PUNC
+S -> NP1 PUNC
+VP -> VB PP
+X1 -> Det NN
+Det -> 'the'
+IN -> 'of'
+NN -> 'company'
+NN -> 'normalcy'
+NNS -> 'Sales'
+PUNC -> '.'
+TO -> 'to'
+VB -> 'return'
