@@ -1,0 +1,13 @@
+Sentence: figure skater lands historic quadruple jump in senior international competition at the 2019 World Figure Skating Championships on Day 3 but could only clinch a silver medal
+
+Bracketed Parse: 
+
+ [S [NP [NN figure] [NN skater]] [VP [X4 [VP [X8 [X5 [VBZ lands] [NP [X1 [JJ historic] [JJ quadruple]] [NN jump]]] [PP [IN in] [NP [X1 [JJ senior] [JJ international]] [NN competition]]]] [PP [IN at] [NP [NP [X10 [X9 [X7 [X2 [DT the] [CD 2019]] [NNP World]] [NNP Figure]] [NNP Skating]] [NNP Championships]] [PP [IN on] [NP [NNP Day] [CD 3]]]]]] [CC but]] [VP [X6 [MD could] [ADVP only]] [VP [VB clinch] [NP [X3 [DT a] [JJ silver]] [NN medal]]]]]]
+
+ [S [NP [NN figure] [NN skater]] [VP [X4 [VP [X8 [X5 [VBZ lands] [NP [X1 [JJ historic] [JJ quadruple]] [NN jump]]] [PP [IN in] [NP [NP [X1 [JJ senior] [JJ international]] [NN competition]] [PP [IN at] [NP [X10 [X9 [X7 [X2 [DT the] [CD 2019]] [NNP World]] [NNP Figure]] [NNP Skating]] [NNP Championships]]]]]] [PP [IN on] [NP [NNP Day] [CD 3]]]] [CC but]] [VP [X6 [MD could] [ADVP only]] [VP [VB clinch] [NP [X3 [DT a] [JJ silver]] [NN medal]]]]]]
+
+ [S [NP [NN figure] [NN skater]] [VP [X4 [VP [X8 [X5 [VBZ lands] [NP [NP [X1 [JJ historic] [JJ quadruple]] [NN jump]] [PP [IN in] [NP [X1 [JJ senior] [JJ international]] [NN competition]]]]] [PP [IN at] [NP [X10 [X9 [X7 [X2 [DT the] [CD 2019]] [NNP World]] [NNP Figure]] [NNP Skating]] [NNP Championships]]]] [PP [IN on] [NP [NNP Day] [CD 3]]]] [CC but]] [VP [X6 [MD could] [ADVP only]] [VP [VB clinch] [NP [X3 [DT a] [JJ silver]] [NN medal]]]]]]
+
+
+Number of parses for the sentence: 3
+

@@ -1,0 +1,36 @@
+Sentence: Dow falls as recession indicator flashed red and economical worries continue through the month
+
+Parse Tree: 
+
+
+[S
+  [NP Dow]
+  [VP
+    [VBZ falls]
+    [SB
+      [X1
+        [SB
+          [IN as]
+          [S
+            [NP
+              [NN recession]
+              [NN indicator]]
+            [VP
+              [VBD flashed]
+              [ADJP red]]]]
+        [CC and]]
+      [S
+        [NP
+          [JJ economical]
+          [NNS worries]]
+        [VP
+          [VBP continue]
+          [PP
+            [IN through]
+            [NP
+              [DT the]
+              [NN month]]]]]]]]
+
+
+Number of parses for the sentence: 1
+

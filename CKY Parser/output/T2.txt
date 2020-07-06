@@ -1,0 +1,26 @@
+Sentence: The new products and services contributed to increase revenue
+
+Parse Tree: 
+
+
+[S
+  [NP
+    [X1
+      [NP
+        [X2
+          [DT The]
+          [JJ new]]
+        [NNS products]]
+      [CC and]]
+    [NNS services]]
+  [VP
+    [VBD contributed]
+    [VP
+      [TO to]
+      [VP
+        [VB increase]
+        [NN revenue]]]]]
+
+
+Number of parses for the sentence: 1
+

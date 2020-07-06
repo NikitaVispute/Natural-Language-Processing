@@ -1,0 +1,26 @@
+Sentence: Sales of the company to return to normalcy.
+
+Parse Tree: 
+
+
+[S
+  [NP1
+    [NNS Sales]
+    [PP
+      [IN of]
+      [NP
+        [X1
+          [Det the]
+          [NN company]]
+        [INFVP
+          [TO to]
+          [VP
+            [VB return]
+            [PP
+              [TO to]
+              [NN normalcy]]]]]]]
+  [PUNC .]]
+
+
+Number of parses for the sentence: 1
+
