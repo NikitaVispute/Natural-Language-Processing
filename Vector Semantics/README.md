@@ -7,6 +7,7 @@ Execution from command line: python HW1_VectorSemantics.py <corpus filename>
         eg. python HW1_VectorSemantics.py "Corpus.txt"
 
 The glove.6B.50D.txt pre-trained vector file along with Corpus.txt file needs to be in the same directory as the program.
+	Using the pre-trained Glove embeddings available at: https://nlp.stanford.edu/projects/glove/
 
 Before executing the code, the library gensim needs to be installed. To do this open Anaconda prompt or command prompt and type command: pip install -U gensim. Once installed, to check, navigate to python IDLE and within it type command: import gensim. 
 If it works, there will be no error message.
